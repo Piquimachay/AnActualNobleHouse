@@ -4,6 +4,7 @@
 		rulers_should_have_dynasty = yes
 		dynasty_named_realms = yes
 		legitimacy = yes
+		allow_accolades = yes
 		court_generate_spouses = no
 	}
 
@@ -21,7 +22,10 @@
 			limit = {
 				government_has_flag = government_is_administrative
 			}
-			agot_is_valid_for_lp_feudal_govt_when_converting_from_admin = yes
+			OR = {
+				has_variable = free_city_govt_swap_to_lp_feudal
+				agot_is_valid_for_lp_feudal_govt_when_converting_from_admin = yes
+			}
 		}
 		trigger_else = {
 			OR = {
@@ -52,37 +56,45 @@
 	color = rgb{ 130 100 100 }
 }
 
-#free_city_government = { # Basically feudal but allowed cities
-#	government_rules = {
-#		create_cadet_branches = yes
-#		rulers_should_have_dynasty = yes
-#		dynasty_named_realms = yes
-#	}
+lorathi_principality_government = {
+	government_rules = {
+		create_cadet_branches = no
+		court_generate_spouses = no
+		council = no
+		religious = no
+		rulers_should_have_dynasty = no
+		dynasty_named_realms = no
+		inherit_from_dynastic_government = no
+	}
 
-#	royal_court = any
+	court_generate_commanders = no
 
-#	primary_holding = castle_holding
-#	valid_holdings = { city_holding }
-#	required_county_holdings = { castle_holding city_holding church_holding }
+	primary_holding = church_holding
 
-#	vassal_contract_group = {
-#		feudal_government_taxes
-#		feudal_government_levies
-#		special_contract
-#		religious_rights
-#		fortification_rights
-#		coinage_rights
-#		succession_rights
-#		war_declaration_rights
-#		council_rights
-#		title_revocation_rights
-#	}
+	can_get_government = {
+		is_landed = no
+		OR = {
+			has_title = title:d_harvest_principality
+			has_title = title:d_fisher_principality
+			has_title = title:d_principality_of_the_streets
+		}
+	}
 
-#	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
-#	flag = government_is_free_city
-#	flag = government_is_default #For grouping governments that should use the regular lifestyle perks.
-#	color = rgb{ 75 180 85 }
-#}
+	ai = {
+		arrange_marriage = no
+		use_goals = no
+		use_decisions = no
+		perform_religious_reformation = no
+	}
+
+	flags = {
+		government_is_lorathi_principality
+		government_is_settled
+		government_is_default #For grouping governments that should use the regular lifestyle perks.
+	}
+
+	color = rgb{ 119 188 112 }
+}
 
 silent_sisterhood_government = {
 	government_rules = {
@@ -92,11 +104,10 @@ silent_sisterhood_government = {
 		religious = yes
 		rulers_should_have_dynasty = no
 		dynasty_named_realms = no
+		allow_accolades = no
 	}
 
 	court_generate_commanders = no
-
-	fallback = 99
 
 	primary_holding = castle_holding
 
@@ -118,6 +129,10 @@ silent_sisterhood_government = {
 		government_is_default #For grouping governments that should use the regular lifestyle perks.
 	}
 
+	character_modifier = {
+		knight_limit = -100
+	}
+
 	color = rgb{ 214 245 250 }
 }
 
@@ -129,11 +144,10 @@ kingsguard_government = {
 		religious = no
 		rulers_should_have_dynasty = no
 		dynasty_named_realms = no
+		allow_accolades = no
 	}
 
 	court_generate_commanders = no
-
-	fallback = 99
 
 	primary_holding = castle_holding
 
@@ -164,6 +178,7 @@ nights_watch_government = {
 		rulers_should_have_dynasty = no
 		dynasty_named_realms = no
 		court_generate_spouses = no
+		allow_accolades = yes
 	}
 
 	court_generate_commanders = no
@@ -214,6 +229,7 @@ the_citadel_government = {
 		rulers_should_have_dynasty = no
 		dynasty_named_realms = no
 		court_generate_spouses = no
+		allow_accolades = no
 	}
 
 	court_generate_commanders = no
@@ -256,11 +272,11 @@ ruins_government = {
 		create_cadet_branches = no
 		rulers_should_have_dynasty = no
 		dynasty_named_realms = no
+		allow_accolades = no
 	}
 
 	character_modifier = {
 		knight_limit = -100
-		active_accolades = -100
 		county_opinion_add = 100
 		monthly_income_mult = -10
 	}
@@ -296,11 +312,11 @@ unknown_government = {
 		create_cadet_branches = no
 		rulers_should_have_dynasty = no
 		dynasty_named_realms = no
+		allow_accolades = no
 	}
 
 	character_modifier = {
 		knight_limit = -100
-		active_accolades = -100
 		county_opinion_add = 100
 		monthly_income_mult = -10
 	}
@@ -336,11 +352,11 @@ wilderness_government = {
 		create_cadet_branches = no
 		rulers_should_have_dynasty = no
 		dynasty_named_realms = no
+		allow_accolades = no
 	}
 
 	character_modifier = {
 		knight_limit = -100
-		active_accolades = -100
 		county_opinion_add = 100
 		monthly_income_mult = -10
 	}
@@ -376,6 +392,7 @@ pirate_government = {
 		dynasty_named_realms = yes
 		landless_playable = yes
 		sticky_government = yes
+		allow_accolades = no
 	}
 
 	royal_court = any
@@ -392,6 +409,7 @@ pirate_government = {
 
 	flags = {
 		agot_pirate_gov_succ_block
+		agot_pirate_sailing_requirements
 		government_can_raid_rule
 		agot_unlocks_conquest_cb
 		government_is_pirate
@@ -409,6 +427,7 @@ pirate_no_dlc_government = {
 		create_cadet_branches = yes
 		rulers_should_have_dynasty = yes
 		dynasty_named_realms = yes
+		allow_accolades = no
 	}
 
 	royal_court = any
@@ -421,6 +440,7 @@ pirate_no_dlc_government = {
 
 	flags = {
 		agot_pirate_gov_succ_block
+		agot_pirate_sailing_requirements
 		government_can_raid_rule
 		agot_unlocks_conquest_cb
 		government_is_pirate_without_landless_dlc
@@ -433,34 +453,13 @@ pirate_no_dlc_government = {
 }
 
 
-host_government = {
-	government_rules = {
-		create_cadet_branches = no
-		rulers_should_have_dynasty = no
-		dynasty_named_realms = no
-	}
-
-	primary_holding = castle_holding
-	valid_holdings = { ruin_holding castle_holding city_holding church_holding pirate_den_holding }
-	required_county_holdings = { city_holding castle_holding church_holding }
-
-	character_modifier = {
-		legitimacy_gain_mult = -0.5
-	}
-
-	flags = {
-		government_is_host
-	}
-
-	color = rgb{ 110 210 190 }
-}
-
 # A dummy government that is NOT meant to be used in-game. We use this in the bookmark frontend GUI to mix landed and landless on one screen.
 dummy_adventurer_govt_for_bms = {
 	government_rules = {
 		create_cadet_branches = no
 		rulers_should_have_dynasty = no
 		dynasty_named_realms = no
+		allow_accolades = no
 	}
 
 	primary_holding = castle_holding
@@ -475,6 +474,8 @@ dummy_adventurer_govt_for_bms = {
 		government_is_custom_landless
 	}
 
+	can_get_government = { always = no }
+
 	color = hsv{ 1 0.0 0.1 }
 }
 
@@ -483,6 +484,7 @@ dummy_admin_govt_for_bms = {
 		create_cadet_branches = no
 		rulers_should_have_dynasty = no
 		dynasty_named_realms = no
+		allow_accolades = no
 	}
 
 	primary_holding = castle_holding
@@ -492,6 +494,8 @@ dummy_admin_govt_for_bms = {
 	flags = {
 		government_is_custom_administrative
 	}
+
+	can_get_government = { always = no }
 
 	color = { 70 6 90 }
 }
@@ -503,13 +507,12 @@ first_ranger_government = {
 		dynasty_named_realms = no
 		court_generate_spouses = no
 		landless_playable = yes
+		allow_accolades = no
 	}
 
 	domicile_type = agot_ranger_camp
 
 	court_generate_commanders = no
-
-	fallback = 99
 
 	primary_holding = castle_holding
 	required_county_holdings = { castle_holding }
@@ -551,6 +554,7 @@ command_government = {
 		create_cadet_branches = no
 		rulers_should_have_dynasty = no
 		dynasty_named_realms = no
+		allow_accolades = yes
 	}
 
 	primary_holding = castle_holding
@@ -569,4 +573,100 @@ command_government = {
 	}
 
 	color = rgb{ 90 140 210 }
+}
+
+#Modified from vanilla administrative
+norvos_government = {
+	government_rules = {
+		create_cadet_branches = yes
+		rulers_should_have_dynasty = yes
+		dynasty_named_realms = no
+		administrative = yes
+		landless_playable = yes
+		state_faith = yes
+		use_as_base_on_landed = yes
+		use_as_base_on_rank_up = yes
+		inherit_from_dynastic_government = no
+		sticky_government = yes
+		house_aspirations = yes
+		noble_families = yes
+		admin_allows_holding_multiple_primary_tier_titles = yes
+		treasury = yes
+		replace_gold_cost_by_treasury = yes
+		allow_accolades = no
+	}
+
+	royal_court = any
+
+	domicile_type = estate
+	main_administrative_tier = county
+	min_appointment_tier = county
+	minimum_provincial_maa_tier = county
+
+	primary_holding = castle_holding
+	valid_holdings = { church_holding city_holding temple_citadel_holding ruin_holding settlement_holding }
+	required_county_holdings = { castle_holding city_holding church_holding }
+
+	vassal_contract_group = admin_vassal
+
+	can_get_government = {
+		OR = {
+			has_title = title:k_norvos
+			any_liege_or_above = { has_title = title:k_norvos }
+			has_character_flag = has_norvos_government
+		}
+	}
+
+	character_modifier = {
+		levy_size = -0.7
+		feudal_government_tax_contribution_mult = -0.5
+		feudal_government_levy_contribution_mult = -0.5
+		clan_government_tax_contribution_mult = -0.5
+		clan_government_levy_contribution_mult = -0.5
+		men_at_arms_cap = -3
+		men_at_arms_limit = -5
+		knight_limit = -5
+		vassal_limit = 100
+		accolades = -1
+		title_creation_cost_mult = -0.05
+		mercenary_hire_cost_mult = 2
+		men_at_arms_maintenance = 0.5
+
+		monthly_treasury_from_liege_mult = -0.15
+
+		# Norvos Specific
+		zealot_tax_contribution_mult = 0.05
+		zealot_levy_contribution_mult = 0.05
+		monthly_piety_gain_mult = 0.15
+	}
+
+	top_liege_character_modifier = {
+		monthly_treasury_from_vassals = 0.85
+		men_at_arms_maintenance = 1.5
+		men_at_arms_recruitment_cost = 1
+	}
+
+	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
+	flags = {
+		government_is_administrative
+		government_has_influence
+		government_has_treasury
+		government_has_title_men_at_arms
+		government_has_powerful_families
+		government_is_settled
+		government_uses_domicile_but_not_adventurer
+		government_uses_domain_limit
+		government_uses_admin_province_obligations
+		government_is_default
+		government_is_free_city
+		government_is_norvos
+		government_has_county_tier_noble_families
+	}
+
+
+	mechanic_type = administrative
+
+	color = { 69 69 55 }
+	realm_mask_offset = { 0.0 0.01 }
+	realm_mask_scale = { 1 1 }
 }
