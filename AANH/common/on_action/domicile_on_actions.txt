@@ -1,0 +1,19 @@
+﻿on_death = {
+	on_actions = {
+		domicile_on_death
+	}
+}
+domicile_on_death = {
+	trigger = {
+		any_held_title = {
+			is_nomad_title = yes
+			title_domicile ?= {
+				NOT = { is_domicile_type = yurt }
+			}
+		}
+		exists = player_heir
+	}
+	effect = {
+		move_domicile_title_to_heir = yes
+	}
+}

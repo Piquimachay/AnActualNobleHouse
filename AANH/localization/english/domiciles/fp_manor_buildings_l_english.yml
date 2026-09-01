@@ -1,0 +1,192 @@
+﻿l_english: 
+ DOMICILE_BUILDING_INTERNAL_BUILDINGS_LIST: "#T Internal Buildings:\n#!"
+ DOMICILE_BUILDING_COOLTIP_NAME: "$EFFECT_LIST_BULLET$[GetDomicileBuilding('$KEY|q$').GetName]"
+ DOMICILE_BUILDING_COOLTIP_NAME_AND_LEVEL: "#T [DOMICILE_BUILDING_TYPE.GetNameNoTooltip]#! #weak (Level $LEVEL$)#!"
+ DOMICILE_BUILDING_COOLTIP_SINGLE_BUILDING: "[DOMICILE_BUILDING_TYPE.GetDescAddNewline]#S Effect:#!\n[DOMICILE_BUILDING_TYPE.GetModifierDesc]"
+ DOMICILE_BUILDING_COOLTIP_SLOT_EXTERNAL: "[DOMICILE_BUILDING_TYPE.GetDescAddNewline]#S Effect:#!\n$EFFECTS$"
+ DOMICILE_BUILDING_COOLTIP_SLOT_INTERNAL: "$DOMICILE_BUILDING_COOLTIP_SLOT_EXTERNAL$\n\n#S Internal Buildings:#!\n$LIST_INTERNAL_BUILDINGS$"
+ DOMICILE_BUILDING_COOLTIP_COST: "#S Cost:\n#![GetCostString( DOMICILE_BUILDING_TYPE.GetBuildingCost( Character.Self ) )]"
+ DOMICILE_BUILDING_COOLTIP_BUILD: "#T Build#! $DOMICILE_BUILDING_COOLTIP_NAME_AND_LEVEL$\n\n$DOMICILE_BUILDING_COOLTIP_SINGLE_BUILDING$\n\n$DOMICILE_BUILDING_COOLTIP_COST$\n\n#I Click to start construction#!"
+ DOMICILE_BUILDING_COOLTIP_UPGRADE: "#T Upgrade to#! $DOMICILE_BUILDING_COOLTIP_NAME_AND_LEVEL$\n\n$DOMICILE_BUILDING_COOLTIP_SINGLE_BUILDING$\n\n$DOMICILE_BUILDING_COOLTIP_COST$\n\n#I Click to start construction#!"
+ DOMICILE_TAX_VALUE: "@gold_icon! [OutlinerDomicileItem.GetGoldIncome|2]"
+ 
+
+
+ ### Estates
+ manor_main_01_domicile_building: "Villa"
+ manor_main_02_domicile_building: "Manor"
+ manor_main_03_domicile_building: "Mansion"
+ manor_main_04_domicile_building: "Estate"
+ manor_main_05_domicile_building: "Grand Estate"
+
+
+ fp_temple_small_01_domicile_building: "Shrine"
+ fp_temple_small_02_domicile_building: "Chapel"
+ fp_temple_small_03_domicile_building: "Stone Chapel"
+ fp_temple_crypt_04_domicile_building: "Family Graveyard"
+ fp_temple_crypt_05_domicile_building: "House Crypt"
+ fp_temple_crypt_06_domicile_building: "Dynastic Catacombs"
+ fp_temple_large_04_domicile_building: "Church"
+ fp_temple_large_05_domicile_building: "Decorated Church"
+ fp_temple_large_06_domicile_building: "Grand Church"
+ fp_temple_monastery_04_domicile_building: "Monastery"
+ fp_temple_monastery_05_domicile_building: "Enclosed Monastery"
+ fp_temple_monastery_06_domicile_building: "Grand Monastery"
+ fp_domicile_large_temple: "[GetDomicileBuilding('temple_large_04').GetName]"
+ 
+ fp_sept_large_04_domicile_building: "Sept"
+ fp_sept_large_05_domicile_building: "Decorated Sept"
+ fp_sept_large_06_domicile_building: "Grand Sept"
+
+ fp_garden_01_domicile_building: "Garden"
+ fp_garden_02_domicile_building: "Lush Garden"
+ fp_garden_03_domicile_building: "Magnificent Garden"
+ fp_garden_leisure_04_domicile_building: "Leisure Garden"
+ fp_garden_leisure_05_domicile_building: "Lavish Leisure Garden"
+ fp_garden_leisure_06_domicile_building: "Grand Leisure Garden"
+ fp_garden_fruit_04_domicile_building: "Fruit Garden"
+ fp_garden_fruit_05_domicile_building: "Orchard"
+ fp_garden_fruit_06_domicile_building: "Bountiful Orchard"
+ fp_estate_garden_building: "[GetDomicileBuilding('garden_01').GetName]"
+
+ fp_stable_01_domicile_building: "Stables"
+ fp_stable_02_domicile_building: "Hay Barracks"
+ fp_stable_03_domicile_building: "Stable Hands"
+ fp_stable_grand_04_domicile_building: "Stablemaster's Quarters"
+ fp_stable_grand_05_domicile_building: "Large Stable"
+ fp_stable_grand_06_domicile_building: "Grand Stable"
+ fp_stable_kennel_04_domicile_building: "Doghouse"
+ fp_stable_kennel_05_domicile_building: "Dog Handlers"
+ fp_stable_kennel_06_domicile_building: "Kennel"
+
+ 
+ fp_storage_01_domicile_building: "Storage Barn"
+ fp_storage_02_domicile_building: "Storehouse"
+ fp_storage_warehouse_03_domicile_building: "Warehouse"
+ fp_storage_warehouse_04_domicile_building: "Large Warehouse"
+ fp_storage_granary_03_domicile_building: "Granary"
+ fp_storage_granary_04_domicile_building: "Large Granary"
+ fp_domicile_building_parameter_house_head_can_ask_building_support: "[house_head|E] can ask for [domicile|E] building support through the $house_head_request_interaction$ [interaction|E]"
+
+ fp_grain_field_01_domicile_building: "Grain Field"
+ fp_grain_field_02_domicile_building: "Expansive Grain Field"
+ fp_grain_field_03_domicile_building: "Two-Field System"
+ fp_grain_field_04_domicile_building: "Three-Field System"
+ fp_grain_field_05_domicile_building: "Tenant Communities"
+ fp_grain_field_06_domicile_building: "Tenant Districts"
+ 
+ fp_vineyard_01_domicile_building: "Small Vineyard"
+ fp_vineyard_02_domicile_building: "Modest Winepresses"
+ fp_vineyard_03_domicile_building: "Fermenting Vats"
+ fp_vineyard_04_domicile_building: "Specialized Coopers"
+ fp_vineyard_05_domicile_building: "Broad Winepresses"
+ fp_vineyard_06_domicile_building: "Massive Vineyard"
+ 
+ fp_olive_01_domicile_building: "Olive Grove"
+ fp_olive_02_domicile_building: "Small Oil Mill"
+ fp_olive_03_domicile_building: "Ointment Production"
+ fp_olive_04_domicile_building: "Olive Plantation"
+ fp_olive_05_domicile_building: "Perfume Maker"
+ fp_olive_06_domicile_building: "Huge Olive Plantation"
+
+
+
+ observatory_01_domicile_building: "Star Charts"
+ observatory_02_domicile_building: "Star Calenders"
+ observatory_03_domicile_building: "Observatory"
+ observatory_04_domicile_building: "Grand Observatory"
+
+ diplomacy_books_01_domicile_building: "Diplomacy Collection"
+ diplomacy_books_02_domicile_building: "Diplomacy Library"
+ diplomacy_books_03_domicile_building: "Diplomacy Grand Library"
+
+ martial_books_01_domicile_building: "Martial Collection"
+ martial_books_02_domicile_building: "Martial Library"
+ martial_books_03_domicile_building: "Martial Grand Library"
+
+ stewardship_books_01_domicile_building: "Stewardship Collection"
+ stewardship_books_02_domicile_building: "Stewardship Library"
+ stewardship_books_03_domicile_building: "Stewardship Grand Library"
+
+ intrigue_books_01_domicile_building: "Intrigue Collection"
+ intrigue_books_02_domicile_building: "Intrigue Library"
+ intrigue_books_03_domicile_building: "Intrigue Grand Library"
+
+ learning_books_01_domicile_building: "Learning Collection"
+ learning_books_02_domicile_building: "Learning Library"
+ learning_books_03_domicile_building: "Learning Grand Library"
+
+ prowess_books_01_domicile_building: "Knighthood Chronicles"
+ prowess_books_02_domicile_building: "Knighthood Legends"
+ prowess_books_03_domicile_building: "Tales of Lost Warriors"
+
+ traveler_books_01_domicile_building: "Maps of Westeros"
+ traveler_books_02_domicile_building: "Legendary Locations"
+ traveler_books_03_domicile_building: "The Accounts of Lomas Longstrider"
+ 
+ maester_tower_01_domicile_building: "Maester's Chambers"
+ maester_tower_02_domicile_building: "Maester's Tower"
+ maester_tower_03_domicile_building: "Maester's Laboritories"
+ maester_tower_04_domicile_building: "Maester's Study"
+ maester_tower_05_domicile_building: "Maester's Grand Study"
+ maester_tower_06_domicile_building: "Personal Citadel"
+### I hate localization bro
+
+ fp_living_quarters_01_domicile_building: "Fine Living Quarters"
+ fp_living_quarters_02_domicile_building: "Luxurious Bedchambers"
+ fp_living_quarters_03_domicile_building: "Statuary Courtyards"
+ fp_living_quarters_04_domicile_building: "Sumptuous Decorations"
+
+ fp_trophy_room_01_domicile_building: "Trophy Room"
+ fp_trophy_room_02_domicile_building: "Trophy Displays"
+ fp_trophy_room_03_domicile_building: "War Table"
+ fp_trophy_room_04_domicile_building: "Weapon Collection"
+
+ fp_bath_01_domicile_building: "Bath"
+ fp_bath_02_domicile_building: "Bathhouse"
+ fp_bath_03_domicile_building: "Steam Baths"
+ fp_bath_04_domicile_building: "Pleasure Houses"
+ 
+ fp_wine_cellar_01_domicile_building: "Wine Room"
+ fp_wine_cellar_02_domicile_building: "Wine Cellar"
+ fp_wine_cellar_03_domicile_building: "Immense Wine Cellar"
+ 
+ fp_courtyard_01_domicile_building: "Courtyard"
+ fp_courtyard_02_domicile_building: "Large Courtyard"
+ fp_courtyard_03_domicile_building: "Grand Courtyard"
+ fp_courtyard_04_domicile_building: "Majestic Courtyard"
+ 
+ fp_prison_01_domicile_building: "Prison Cell"
+ fp_prison_02_domicile_building: "Prison"
+ fp_prison_03_domicile_building: "Oubliette"
+ fp_prison_04_domicile_building: "Torture Chamber"
+ 
+ 
+ # Parameters
+ domicile_building_parameter_estate_increased_maester_aptitude_lesser: "[GetCourtPositionType('maester_court_position').GetName()] [aptitude|E] increased"
+ domicile_building_parameter_estate_increased_maester_aptitude_greater: "[GetCourtPositionType('maester_court_position').GetName()] [aptitude|E] greatly increased"
+ 
+ estate_increased_maester_aptitude_lesser_desc: "Domicile"
+ estate_increased_maester_aptitude_greater_desc: "Domicile"
+ 
+ feast_option_wine: "Wine Selection"
+ feast_wine_none: "No Wine"
+ feast_wine_none_desc: "$EFFECT_LIST_BULLET$ No additional Renown gain\n\n#weak No additional gold will be spent on wine and drinks.#!"
+ feast_wine_limited: "Limited Wine Selection"
+ feast_wine_limited_desc: "#indent_newline:4 $EFFECT_LIST_BULLET$ Gain a small amount of Renown per attendee#!\n\n#weak Spend a small amount of gold to offer some local wine.#!"
+ feast_wine_normal: "Adequate Wine Selection"
+ feast_wine_normal_desc: "#indent_newline:4 $EFFECT_LIST_BULLET$ Gain a moderate amount of Renown per attendee#!\n\n#weak Offer an increased variety of wine and exotic drinks.#!"
+ feast_wine_extensive: "Generous Wine Selection"
+ feast_wine_extensive_desc: "#indent_newline:4 $EFFECT_LIST_BULLET$ Gain a significant amount of Renown per attendee#!\n\n#weak An extensive selection of wines, both local variants and imported from afar, is available in vast quantities!#!"
+ wine_limited_reward_tt_title: "$final_reward_tt$"
+ wine_limited_reward_tt: "The available wine was enough to please the guests"
+ wine_normal_reward_tt_title: "$final_reward_tt$"
+ wine_normal_reward_tt: "The wine selection impressed the guests"
+ wine_extensive_reward_tt_title: "$final_reward_tt$"
+ wine_extensive_reward_tt: "The wine selection greatly impressed the guests"
+ feast_estate_reward_tt_title: "$final_reward_tt$"
+ feast_estate_reward_tt: "The $courtyard_01_domicile_building$ impressed the guests"
+ 
+ can_recruit_archer_cavalry_trigger_desc: "You do #bold not#! have access to any [archer_cavalry|E] [men_at_arms|E]"
+ 
+ 

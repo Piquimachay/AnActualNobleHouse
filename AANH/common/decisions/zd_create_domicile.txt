@@ -1,0 +1,46 @@
+zd_get_domicile = {
+	ai_check_interval = 0
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	}
+	desc = zd_get_domicile_desc
+
+	selection_tooltip = zd_get_domicile_tooltip
+	decision_group_type = major
+	cooldown = { days = 1 }
+
+	is_shown = {
+		is_ai = no
+		has_domicile = no
+		OR = {
+			government_has_flag = government_is_feudal
+			government_has_flag = government_is_clan
+		}
+		NOT = { government_has_flag = government_is_tribal }
+		NOT = { has_primary_title != title:k_dragonstone }
+	}
+
+	is_valid_showing_failures_only = {
+	}
+
+	is_valid = {
+	}
+
+	effect = {
+		create_nomad_title = {
+			name = zd_manor_name
+			holder = root
+			government = lp_feudal_government
+			save_scope_as = new_manor_title
+		}
+	
+	}
+
+	ai_potential = {
+		always = no
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+}

@@ -1,0 +1,24 @@
+﻿l_english: 
+ 
+ fp_manor_domicile_title: "The [CHARACTER.GetHouse.GetBaseNameNoTooltip] $game_concept_estate$"
+
+ fp_manor_domicile_type: "$game_concept_estate$"
+ fp_manor_domicile_type_tooltip: "$ESTATE$"
+
+
+ fp_manor_domicile_type_possessive: "Estate's"
+
+ ### Decision
+ zd_get_domicile: "Create Estate"
+ zd_get_domicile_desc: "Creating an estate for your family to live, and thrive in, for generations to come."
+ zd_get_domicile_tooltip: "Home Time"
+ zd_get_domicile_confirm: "A place to rest."
+ zd_manor_name: "Estates"
+ 
+ domicile_adventurer: "[CHARACTER.GetPrimaryTitle.GetNameNoTooltip]"
+ domicile_estate: "the [CHARACTER.GetHouse.GetNameNoTooltip] Estate"
+
+
+ fp_manor_domicile_type: "[CHARACTER.GetHouse.GetNameNoTooltip] Estate"
+ fp_manor_move_desc: "Move Estate (ONLY DO WITH PERMISSION)"
+ fp_manor_domicile_type_tooltip: "Estate"
